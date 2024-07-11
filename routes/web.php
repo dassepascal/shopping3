@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
@@ -33,15 +34,22 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+$idRegex = '[0-9]+';
+$slugRegex = '[a-z0-9-]+';
+Route::get('/',[HomeController::class,'index'])->name('home');
+Route::get('/products',[ProductController::class,'index'])->name('products.index');
+Route::get('/products/{slug}',[ProductController::class,'show'])->name('product.show')->where([
+    'slug' => $slugRegex,
+    'product'=> $idRegex
 
-Route::get('/',[HomeController::class,'index']);
+]);
 
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resources([
     'roles' => RoleController::class,
     'users' => UserController::class,
-    'items' => ItemController::class,
+
 
     ]);
     });
