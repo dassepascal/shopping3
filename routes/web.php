@@ -18,9 +18,9 @@ use App\Http\Controllers\Admin\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -34,7 +34,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-//Route::get('/',[HomeController::class,'index']);
+Route::get('/',[HomeController::class,'index']);
 
 
 Route::prefix('admin')->name('admin.')->group(function () {
