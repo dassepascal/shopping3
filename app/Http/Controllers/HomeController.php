@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -10,10 +11,9 @@ class HomeController extends Controller
     public function index()
     {
 
-        $items = Item::paginate(5);
-        
+        $products = Product::all();
         return view('home',[
-            'items' => $items
-        ] );
+            'products' => $products
+        ]);
     }
 }
