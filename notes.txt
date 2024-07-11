@@ -1,0 +1,26 @@
+support: https://www.allphptricks.com/simple-laravel-10-user-roles-and-permissions/
+
+
+Install Laravel 10 App
+install breeze : https://laravel.com/docs/11.x/starter-kits#laravel-breeze
+blade + alpine
+install vue : https://laraveldaily.com/post/how-to-add-vue-3-laravel-10-vite-quick-tutorial
+Install  Spatie Laravel Permission Package : composer require spatie/laravel-permission
+Add Role and Permission Middleware
+Create a Product Model with Migration, Resource Controller and Form Requests
+Update Migration and Model of Product
+Add Spatie Traits in User Model
+Create Role, Permission and Super Admin Seeder
+Configure Database Credentials
+Migrate Tables and Seed to Database
+Defining a Super Admin in AuthServiceProvider
+Enable Bootstrap 5 in AppServiceProvider
+Laravel Bootstrap Auth Scaffolding – User Register and Login
+Define Role, User and Product Resource Routes
+Create Role and User Resource Controllers
+Update Role, User and Product Controllers
+Make Role and User Form Requests
+Update Role, User and Product Store and Update Form Requests
+Create Role, User and Product Resource Blade View Files
+Update Application Layout and Home Blade View Files
+Run Laravel Development Server
