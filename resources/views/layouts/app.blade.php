@@ -16,7 +16,7 @@
     </head>
     <body id="app" class="font-sans antialiased">
         <div class="">
-            @include('layouts.nav4')
+            @include('layouts.navigation')
 
 
             <!-- Page Heading -->
