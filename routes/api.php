@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,6 @@ Route::middleware('auth:sanctum')->group(function () {
         return $request->user();
     });
 
-   //Route::apiResource('cart', CartController::class);
+   Route::apiResource('products',CartController::class);
 });
 

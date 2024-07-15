@@ -39,7 +39,7 @@
 
 
 
-        {{-- <add-to-cart :product-id="{{ $product->id }}"></add-to-cart> --}}
+        <add-to-cart :product-id="{{ $product->id }}"></add-to-cart>
         <!-- Modal toggle -->
 
 
@@ -60,9 +60,9 @@
 @endif --}}
 
 {{-- voir les détails --}}
-<div class='flex items-center justify-between py-4'>
+{{-- <div class='flex items-center justify-between py-4'>
     <a class="bg-indigo-500 text-white p-2"  href="{{ route('product.show',['slug'=> $product->slug]) }}">Voir les détails</a>
-</div>
+</div> --}}
 
          {{-- <div class='flex items-center justify-between py-4'>
             <button class="bg-indigo-500 text-white p-2">Ajouter au panier</button>
