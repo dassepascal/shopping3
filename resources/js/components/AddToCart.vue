@@ -8,8 +8,10 @@
 
 
 <script setup>
+
+const productId = defineProps(['productId']);
 const addToCart = () => {
-    console.log('add to cart');
+    console.log(productId);
 }
 
 </script>
