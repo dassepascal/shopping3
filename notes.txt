@@ -30,4 +30,8 @@ user connecte api
 
 
 
-composables
+composables/products*index.js
+
+dans tailwind.css verification que la ligne suivante existe : './resources/js/**/*.vue',
+
+

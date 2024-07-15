@@ -28,7 +28,7 @@
             <!-- Settings Dropdown -->
 
             <div class="hidden sm:flex sm:items-center sm:ms-6 ">
-
+<navbar-cart></navbar-cart>
 
                 {{-- route login --}}
                 @if (Route::has('login'))
