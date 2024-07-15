@@ -24,3 +24,6 @@ Update Role, User and Product Store and Update Form Requests
 Create Role, User and Product Resource Blade View Files
 Update Application Layout and Home Blade View Files
 Run Laravel Development Server
+
+
+user connecte api
