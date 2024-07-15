@@ -28,8 +28,8 @@
                     </ul>
                     @if (Route::has('login'))
                     @auth
-                   
-                    {{-- <add-to-cart :product-id="{{ $product->id }}"></add-to-cart> --}}
+
+                    <add-to-cart :product-id="{{ $product->id }}"></add-to-cart>
                     @endauth
                     @endif
                     <div class="bg-gray-200 rounded-lg p-4 mt-4">
