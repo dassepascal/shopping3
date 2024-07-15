@@ -1,6 +1,6 @@
 <template>
 
-<div class="flex items-center justify-between py-4">
+    <div class="flex items-center justify-between py-4">
         <button class="bg-indigo-500 text-white p-2 rounded" v-on:click.prevent="addToCart">Ajouter au panier</button>
 
     </div>
@@ -12,15 +12,13 @@
 const productId = defineProps(['productId']);
 const addToCart = async () => {
 
-await axios.get('/sanctum/csrf-cookie');
-await axios.get('/api/user')
-    .then(async (res) => {
-        console.log(res)
-        // recuperation du cartCount
-
-    })
-    .catch(() => {
-            });
+    await axios.get('/sanctum/csrf-cookie');
+    await axios.get('/api/user')
+        .then(async (res) => {
+            console.log(res)
+        })
+        .catch(() => {
+        });
 };
 
 </script>
