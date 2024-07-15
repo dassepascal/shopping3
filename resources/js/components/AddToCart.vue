@@ -10,8 +10,17 @@
 <script setup>
 
 const productId = defineProps(['productId']);
-const addToCart = () => {
-    console.log(productId);
-}
+const addToCart = async () => {
+
+await axios.get('/sanctum/csrf-cookie');
+await axios.get('/api/user')
+    .then(async (res) => {
+        console.log(res)
+        // recuperation du cartCount
+
+    })
+    .catch(() => {
+            });
+};
 
 </script>
