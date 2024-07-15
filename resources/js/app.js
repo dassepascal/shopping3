@@ -1,6 +1,6 @@
 import './bootstrap';
 import { createApp } from 'vue';
-import IncrementCounter from './components/IncrementCounter.vue';
+
 
 import Alpine from 'alpinejs';
 
@@ -12,6 +12,6 @@ Alpine.start();
 
 const app = createApp({});
 
-app.component('increment-counter', IncrementCounter);
+
 
 app.mount('#app');

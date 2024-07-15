@@ -28,8 +28,7 @@
                     </ul>
                     @if (Route::has('login'))
                     @auth
-                    <x-primary-button class="w-full"    >Ajouter au panier</x-primary-button>
-                    <button>Ajouter au panier</button>
+                   
                     {{-- <add-to-cart :product-id="{{ $product->id }}"></add-to-cart> --}}
                     @endauth
                     @endif
