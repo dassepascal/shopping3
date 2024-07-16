@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class ShoppingCartController extends Controller
 {
-    //
+    public function __invoke(Request $request)
+    {
+return view('cart.index');
+    }
 }
