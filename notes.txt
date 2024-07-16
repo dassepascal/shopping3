@@ -34,4 +34,6 @@ composables/products*index.js
 
 dans tailwind.css verification que la ligne suivante existe : './resources/js/**/*.vue',
 
+gestion des evenement (tiny-emetter pour laravel 9 qui ne fonctionne pas avec Laravel 10)
 
+creation de eventBus.js
