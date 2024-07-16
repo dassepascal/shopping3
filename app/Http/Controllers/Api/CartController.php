@@ -15,4 +15,14 @@ class CartController extends Controller
 $count = (new CartRepository())->add($product);
     return response()->json(['count' => $count]);
    }
+
+   public function count()
+   {
+       $count = (new CartRepository())->count();
+
+       return response()->json([
+           'count' => $count,
+       ]);
+
+   }
 }
