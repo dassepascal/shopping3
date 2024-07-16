@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\ShoppingCartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,7 @@ Route::get('/products/{slug}',[ProductController::class,'show'])->name('product.
     'product'=> $idRegex
 
 ]);
+Route::get('/shoppingCart',ShoppingCartController::class)->name('shopping.index');
 
 
 Route::prefix('admin')->name('admin.')->group(function () {
