@@ -11,6 +11,17 @@
     </div>
 </template>
 <script setup>
+import { onMounted } from 'vue';
+import useProduct from '@/composables/products';
+
+const { getCount} = useProduct();
+
+
+onMounted(async() => {
+
+    let count = await getCount();
+    console.log(count);
+});
 
 </script>
 ../eventBus.js
