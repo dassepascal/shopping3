@@ -114,6 +114,8 @@ npm install @meforma/vue-toaster
 
 probleme au niveau de l'import passe par un service d'injection
 
+creation des toaster : produit ajouter + veuillez vous login'
 
+Creation de ShoppingCart.vue
 
 
