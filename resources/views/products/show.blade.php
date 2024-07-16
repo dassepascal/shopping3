@@ -26,12 +26,11 @@
                         <li>Orné de véritables plumes d'aigle (obtenues légalement)</li>
                         <li>Incluant une baguette en bois de cèdre et un sac de transport en cuir</li>
                     </ul>
-                    @if (Route::has('login'))
-                    @auth
+
 
                     <add-to-cart :product-id="{{ $product->id }}"></add-to-cart>
-                    @endauth
-                    @endif
+
+
                     <div class="bg-gray-200 rounded-lg p-4 mt-4">
                         <h3 class="font-bold mb-2">Livraison</h3>
                         <p>Livraison gratuite en France métropolitaine. Expédition sous 3-5 jours ouvrés.</p>

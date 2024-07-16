@@ -11,10 +11,12 @@
 import axios from 'axios';
 import  useProduct  from '@/composables/products';
 import useEventBus from '../eventBus.js';
+import { inject } from 'vue';
 
 const { add } = useProduct();
 const { emit } = useEventBus();
 const productId = defineProps(['productId']);
+const toast = inject('toast')
 
 
 const addToCart = async () => {
@@ -24,13 +26,11 @@ const addToCart = async () => {
         .then(async (res) => {
          let cartCount =   await add(productId);
             emit('cartCountUpdated', cartCount)
-            // let response = await axios.post('/api/products', {
-            //     productId: productId
-            // });
-            // console.log(response)
+            toast.success('Produit ajouté au panier');
+
         })
-        .catch((err) => {
-            console.log(err)
+        .catch(() => {
+toast.error ('Vous devez être connecté pour ajouter au panier');
         });
 
 };

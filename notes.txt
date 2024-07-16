@@ -37,3 +37,83 @@ dans tailwind.css verification que la ligne suivante existe : './resources/js/**
 gestion des evenement (tiny-emetter pour laravel 9 qui ne fonctionne pas avec Laravel 10)
 
 creation de eventBus.js
+import { ref } from "vue";
+const bus = ref(new Map());
+
+export default function useEventsBus(){
+
+    function emit(event, ...args) {
+        bus.value.set(event, args);
+    }
+
+    return {
+        emit,
+        bus
+    }
+}
+
+dans AddToCart : emitter
+import useEventBus from '../eventBus.js';
+
+const { emit } = useEventBus();
+
+ emit('cartCountUpdated', cartCount)
+
+dans NavbarCart utilisation de watch()
+import de eventBus
+const {bus} = useEventBus();
+
+watch(()=> bus.value.get('cartCountUpdated'), (count) => {
+    const[cartCountUpdatedBus]=count;
+
+    cartCount.value = cartCountUpdatedBus
+});
+*********************************************************************
+dans products/index.js
+import {ref} from 'vue';
+
+export default function useProducts() {
+
+    const products = ref([]);
+    const cartCount = ref(0);
+
+
+    const getProducts = async() => {
+        let response = await axios.get('/api/products');
+        console.log(response.data)
+        products.value = response.data.cartContent;
+        cartCount.value = response.data.cartCount
+    }
+    const add= async(productId) => {
+        let response = await axios.post('/api/products',{
+            productId: productId
+        });
+
+
+        return response.data.count
+    }
+    const getCount = async() => {
+        let response = await axios.get('/api/products/count');
+        //console.log(response.data.count)
+        return response.data.count
+    }
+
+    return {
+        add,
+        getCount,
+        getProducts,
+        products,
+        cartCount
+    }
+}
+******************************************************************
+
+vue toast : https://github.com/MeForma/vue-toaster
+
+npm install @meforma/vue-toaster
+
+probleme au niveau de l'import passe par un service d'injection
+
+
+
+
