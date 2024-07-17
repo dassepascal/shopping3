@@ -70,6 +70,25 @@
                             {{ cartTotal }}
                         </div>
                     </div>
+                    <div class="flex justify-between pt-4">
+                        <div>
+                    <a href="">
+                        <button
+                        class="bg-indigo-500 px-5 rounded text-white">
+                            Continuer mes achats
+                        </button>
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <button
+                        class="bg-indigo-500 px-5 rounded text-white" >
+                        Passer la commande
+                        </button>
+                    </a>
+                </div>
+                    </div>
+
                     <!-- <a href="/checkout">
                         <button
                             class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-gray-800 rounded-full shadow item-center hover:bg-gray-700 focus:shadow-outline focus:outline-none">
