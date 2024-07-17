@@ -1,5 +1,4 @@
-
-<template >
+<template>
     <div class="flex justify-center my-6">
         <div class="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
             <div class="flex-1">
@@ -22,7 +21,8 @@
                             <tr>
                                 <td class="hidden pb-4 md:table-cell">
                                     <a href="">
-                                        <img :src="product.associatedModel.image" class="w-20 rounded" alt="Thumbnail" />
+                                        <img :src="product.associatedModel.image" class="w-20 rounded"
+                                            alt="Thumbnail" />
                                     </a>
                                 </td>
                                 <td>
@@ -87,45 +87,50 @@
     </div>
 </template>
 
-<script setup >
-import { onMounted } from 'vue';
+<script setup>
+import { onMounted, computed } from 'vue';
 import useProduct from '@/composables/products';
 import useEventBus from '../eventBus.js';
 import { formatPrice } from '../helpers';
+
 
 const { bus } = useEventBus();
 const {
     getProducts,
     products,
-  cartCount,
+    cartCount,
     increaseQuantity,
     decreaseQuantity,
     destroyProduct
 
-}= useProduct();
+} = useProduct();
 
-const increase =async (id)=>{
+const increase = async (id) => {
     await increaseQuantity(id);
     await getProducts();
 
 }
-const decrease =async (id)=>{
+const decrease = async (id) => {
     await decreaseQuantity(id);
     await getProducts();
 
 }
 
 
-const destroy = async(id)=>{
+const destroy = async (id) => {
     await destroyQuantity(id);
     await getProducts();
 
 }
+const cartTotal = computed(() => {
+    let price = Object.values(products.value).reduce((acc, product) => acc += product.price * product.quantity, 0);
+    return formatPrice(price)
+});
 
-onMounted(async() => {
-      await getProducts();
+onMounted(async () => {
+    await getProducts();
 
 }
-    )
+)
 
 </script>
