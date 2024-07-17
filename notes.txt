@@ -127,5 +127,7 @@ dans le repertoire .editorconfig mettre à false la ligne suivante :insert_final
 
 dans shoopingcart :
 creation methode increase + decrease
-dans products/index.js
+dans products/index.js add const increaseQuantity + decreaseQuantity'
+
+creation des routes increase + decrease
 
