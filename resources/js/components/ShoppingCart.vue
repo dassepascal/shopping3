@@ -100,6 +100,12 @@ const {
 
 }= useProduct();
 
+const increase = ()=>{
+
+}
+const decrease = ()=>{
+
+}
 
 onMounted(async() => {
      products = await getProducts();

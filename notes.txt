@@ -119,3 +119,13 @@ creation des toaster : produit ajouter + veuillez vous login'
 Creation de ShoppingCart.vue
 
 
+add button + & -
+
+*************remarque pour eviter le saut de ligne dans vsd**************
+dans le repertoire .editorconfig mettre à false la ligne suivante :insert_final_newline = false
+*************************************************************************
+
+dans shoopingcart :
+creation methode increase + decrease
+dans products/index.js
+

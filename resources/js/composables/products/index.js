@@ -26,11 +26,20 @@ products.value = response.data.cartContent;
         return response.data.count
     }
 
+    const increaseQuantity = (id)=>{
+        await axios.get('/api/products/increase/'+id)
+    }
+    const decreaseQuantity = (id)=>{
+        await axios.get('/api/products/decrease/'+id)
+    }
+
     return {
         add,
         getCount,
         getProducts,
         products,
-        cartCount
+        cartCount,
+        increaseQuantity,
+        decreaseQuantity
     }
 }
