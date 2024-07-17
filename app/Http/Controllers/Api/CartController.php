@@ -31,4 +31,19 @@ $count = (new CartRepository())->add($product);
        ]);
 
    }
+   public function increase($id)
+   {
+    (new CartRepository())->increase($id);
+    return response()->json();
+   }
+   public function decrease($id)
+   {
+    (new CartRepository())->decrease($id);
+    return response()->json();
+   }
+   public function destroyProduct($id)
+   {
+    (new CartRepository())->remove($id);
+    return response()->json();
+   }
 }

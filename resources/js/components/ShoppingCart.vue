@@ -92,23 +92,38 @@ import { onMounted } from 'vue';
 import useProduct from '@/composables/products';
 import useEventBus from '../eventBus.js';
 import { formatPrice } from '../helpers';
-const { cartTotal, cartContent, decrease, increase } = useProduct();
+
 const { bus } = useEventBus();
 const {
     getProducts,
-    products
+    products,
+  cartCount,
+    increaseQuantity,
+    decreaseQuantity,
+    destroyProduct
 
 }= useProduct();
 
-const increase = ()=>{
+const increase =async (id)=>{
+    await increaseQuantity(id);
+    await getProducts();
 
 }
-const decrease = ()=>{
+const decrease =async (id)=>{
+    await decreaseQuantity(id);
+    await getProducts();
+
+}
+
+
+const destroy = async(id)=>{
+    await destroyQuantity(id);
+    await getProducts();
 
 }
 
 onMounted(async() => {
-     products = await getProducts();
+      await getProducts();
 
 }
     )

@@ -26,11 +26,15 @@ products.value = response.data.cartContent;
         return response.data.count
     }
 
-    const increaseQuantity = (id)=>{
+    const increaseQuantity = async (id)=>{
         await axios.get('/api/products/increase/'+id)
     }
-    const decreaseQuantity = (id)=>{
+    const decreaseQuantity = async (id)=>{
         await axios.get('/api/products/decrease/'+id)
+    }
+
+    const destroyProduct =async (id)=>{
+        axios.delete('/api/products/'+id);
     }
 
     return {
@@ -40,6 +44,7 @@ products.value = response.data.cartContent;
         products,
         cartCount,
         increaseQuantity,
-        decreaseQuantity
+        decreaseQuantity,
+        destroyProduct
     }
 }
