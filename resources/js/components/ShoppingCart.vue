@@ -36,12 +36,12 @@
                                 </td>
                                 <td class="justify-center md:justify-end md:flex mt-6">
                                     <div class="relative flex flex-row w-full h-8 space-x-3x">
-                                        <!-- <button v-on:click.prevent="decrease(product.id)">
-                                            -</button> -->
+                                        <button v-on:click.prevent="decrease(product.id)">
+                                            -</button>
                                         <input readonly :value="product.quantity"
                                             class="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black mx-3" />
-                                        <!-- <button v-on:click.prevent="increase(product.id)">
-                                            +</button> -->
+                                        <button v-on:click.prevent="increase(product.id)">
+                                            +</button>
                                     </div>
                                 </td>
                                 <td class="hidden text-right md:table-cell">
