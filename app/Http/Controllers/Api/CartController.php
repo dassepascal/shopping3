@@ -9,6 +9,12 @@ use App\Repositories\CartRepository;
 
 class CartController extends Controller
 {
+
+    public function index()
+    {
+        $cartContent = (new CartRepository())->content();
+        return response()->json(['cartContent' => $cartContent]);
+    }
    public function store(Request $request)
    {
     $product = Product::where('id', $request->productId)->first();
