@@ -8,6 +8,12 @@
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
+        {{-- firstname --}}
+        <div>
+            <x-input-label for="firstname" :value="__('Firstname')" />
+            <x-text-input id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" autofocus autocomplete="name" />
+            <x-input-error :messages="$errors->get('firstname')" class="mt-2" />
+        </div>
 
         <!-- Email Address -->
         <div class="mt-4">
@@ -38,7 +44,18 @@
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
-
+        <div class="row col s12">
+            <label>
+              <input type="checkbox" name="newletter" id="newletter" >
+              <span>Je désire recevoir votre lettre d'information</span>
+            </label>
+          </div>
+          <div class="row col s12">
+            <label>
+              <input type="checkbox" name="rgpd" id="rgpd" {{ old('rgpd') ? 'checked' : '' }}>
+              <span>J'accepte les termes et conditions de <a href="{{ route('page.politique-de-confidentialite') }}" target="_blank">la politique de confidentialité</a>.</span>
+            </label>
+          </div>
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
