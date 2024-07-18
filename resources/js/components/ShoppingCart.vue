@@ -20,7 +20,7 @@
 
                             <tr>
                                 <td class="hidden pb-4 md:table-cell">
-                                    <a href="">
+                                    <a href="#">
                                         <img :src="product.associatedModel.image" class="w-20 rounded"
                                             alt="Thumbnail" />
                                     </a>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="flex justify-between pt-4">
                         <div>
-                    <a href="">
+                    <a href="{{ route('home') }}">
                         <button
                         class="bg-indigo-500 px-5 rounded text-white">
                             Continuer mes achats
