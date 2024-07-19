@@ -4,7 +4,7 @@
 
 namespace App\Repositories;
 
-use Cart;
+
 use App\Models\Product;
 
 class CartRepository
@@ -67,5 +67,16 @@ class CartRepository
     {
 
         \Cart::session(auth()->user()->id)->remove($id);
+    }
+
+    public function clear()
+    {
+        \Cart::session(auth()->user()->id)->clear();
+    }
+
+    private function getItem(int $id)
+    {
+        return \Cart::session(auth()->user()->id)
+            ->get($id);
     }
 }

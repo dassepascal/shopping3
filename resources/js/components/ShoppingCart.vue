@@ -71,13 +71,8 @@
                         </div>
                     </div>
                     <div class="flex justify-between pt-4">
-                        <div>
-                    <a href="{{ route('home') }}">
-                        <button
-                        class="bg-indigo-500 px-5 rounded text-white">
-                            Continuer mes achats
-                        </button>
-                    </a>
+                        <div >
+                            <a  class="bg-indigo-500 px-5 rounded text-white"  href="/">Continuer mes achats</a>
                 </div>
                 <div>
                     <a href="">

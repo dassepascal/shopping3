@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import NotFound from './components/NotFound.vue'
 import Register from './components/Register.vue'
+import Home from './components/Home.vue'
 
 const routes = [
 
@@ -16,6 +17,14 @@ const routes = [
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: NotFound
+  },
+  {
+    path:'/home',
+    name:'Home',
+    component : Home,
+    redirect:'/'
+
+
   }
 ]
 
