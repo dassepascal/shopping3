@@ -26,6 +26,14 @@ class User extends Authenticatable
         'newletter',
         'last_seen',
     ];
+      /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'last_seen',
+    ];
 
     /**
      * The attributes that should be hidden for serialization.
