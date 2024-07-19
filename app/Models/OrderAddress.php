@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Country;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class OrderAddress extends Model
 {
@@ -11,4 +12,8 @@ class OrderAddress extends Model
     protected $fillable = [
         'name', 'firstname', 'professionnal', 'civility', 'company', 'address', 'addressbis', 'bp', 'postal', 'city', 'phone', 'country_id', 'facturation',
     ];
+    public function country()
+{
+    return $this->belongsTo(Country::class);
+}
 }

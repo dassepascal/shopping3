@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Address;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Address>
@@ -14,10 +15,30 @@ class AddressFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition()
     {
+        $professionnal = $this->faker->boolean();
+        if(!$professionnal || ($professionnal && $this->faker->boolean())) {
+            $name = $this->faker->lastName;
+            $firstName = $this->faker->firstName;
+        } else {
+            $name = null;
+            $firstName = null;
+        }
+
         return [
-            //
+            'professionnal' => $professionnal,
+            'civility' => $this->faker->boolean() ? 'Mme': 'M.',
+            'name' => $name,
+            'firstname' => $firstName,
+            'company' => $professionnal ? $this->faker->company : null,
+            'address' => $this->faker->streetAddress,
+            'addressbis' => $this->faker->boolean() ? $this->faker->secondaryAddress : null,
+            'bp' => $this->faker->boolean() ? $this->faker->numberBetween(100, 900) : null,
+            'postal' => $this->faker->numberBetween(10000, 90000),
+            'city' => $this->faker->city,
+            'country_id' => $this->faker->numberBetween(1, 4),
+            'phone' => $this->faker->numberBetween(1000000000, 9000000000),
         ];
     }
 }
