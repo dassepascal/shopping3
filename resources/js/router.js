@@ -3,29 +3,28 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 
 import NotFound from './components/NotFound.vue'
-import Register from './components/Register.vue'
+
 import Home from './components/Home.vue'
+import Commande from './components/Commande.vue'
+
+
 
 const routes = [
-
-  {
-    path: '/register',
-    name: 'Register',
-    component: Register
-  },
-  {
-    path: '/:pathMatch(.*)*',
-    name: 'NotFound',
-    component: NotFound
-  },
   {
     path:'/home',
     name:'Home',
     component : Home,
     redirect:'/'
+  },
+    {
+        path: '/commande',
+        name: 'Commande',
+        component: Commande
+
+    }
 
 
-  }
+
 ]
 
 export default createRouter({

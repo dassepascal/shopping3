@@ -5,6 +5,7 @@ import AddToCart from './components/AddToCart.vue';
 import NavbarCart from './components/NavbarCart.vue';
 import  Toaster  from '@meforma/vue-toaster';
 import ShoppingCart from './components/ShoppingCart.vue';
+import Commande from './components/Commande.vue';
 
 
 import Alpine from 'alpinejs';
@@ -20,6 +21,7 @@ app.use(router);
 app.component('add-to-cart', AddToCart);
 app.component('navbar-cart', NavbarCart);
 app.component('shopping-cart', ShoppingCart);
+app.component('commande', Commande);
 
 
 

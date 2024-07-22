@@ -17,9 +17,9 @@ class CartController extends Controller
     }
    public function store(Request $request)
    {
-    $product = Product::where('id', $request->productId)->first();
-$count = (new CartRepository())->add($product);
-    return response()->json(['count' => $count]);
+            $product = Product::where('id', $request->productId)->first();
+            $count = (new CartRepository())->add($product);
+            return response()->json(['count' => $count]);
    }
 
    public function count()

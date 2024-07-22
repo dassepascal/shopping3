@@ -30,7 +30,7 @@ const addToCart = async () => {
 
         })
         .catch(() => {
-toast.error ('Vous devez être connecté pour ajouter au panier');
+        toast.error ('Vous devez être connecté pour ajouter au panier');
         });
 
 };

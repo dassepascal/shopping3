@@ -23,8 +23,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/products/increase/{id}',[CartController::class,'increase']);
     Route::get('/products/decrease/{id}',[CartController::class,'decrease']);
     Route::get('products/count',[CartController::class,'count']);
+    Route::get('/commande',[OrderController::class,'index']);
 
    Route::apiResource('products',CartController::class);
-  
+
 });
 
