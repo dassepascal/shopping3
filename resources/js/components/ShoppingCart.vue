@@ -75,7 +75,7 @@
                             <a  class="bg-indigo-500 px-5 rounded text-white"  href="/">Continuer mes achats</a>
                 </div>
                 <div>
-                    <a href="">
+                    <a href="{{ route('commandes.create') }}">
                         <button
                         class="bg-indigo-500 px-5 rounded text-white" >
                         Passer la commande
